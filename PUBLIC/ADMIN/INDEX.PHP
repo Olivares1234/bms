@@ -1,0 +1,51 @@
+<?php require_once('../../private/initialize.php'); ?>
+<?php $page_title = 'Dashboard'; ?>
+<?php include(SHARED_PATH . '/city_hall_header.php'); ?>
+<div id="vue-city-hall" class="mt-4" v-cloak>
+	<section class="content">
+		<div class="col-md-12">
+			<div class="box box-primary">
+			    <div class="box-header with-border">
+			        <h3 class="box-title">Dashboard</h3>
+			    </div><!-- /.box-header -->
+			        <div class="box-body">
+			        	<div class="row">
+			            	<div class="col-lg-4 col-xs-6">
+			                	<!-- small box -->
+			                	<div class="small-box" id="user-box">
+			                		<div class="inner">
+			                    		<h3 class="text-light" v-cloak>User{{"(" + countActiveUser() + ")"}}</h3>
+			                    		<p class="text-light">View/Add</p>
+			                  		</div>
+			                  		<div class="icon" style="margin-top:10px">
+			                    		<i class="fas fa-user"></i>
+			                  		</div>
+			                  		<a href="<?php echo url_for('admin/user.php')?>" class="small-box-footer">
+			                    		<i class="fas fa-angle-double-right"></i>
+			                  		</a>
+			                	</div>
+			              	</div><!-- ./col -->
+
+			              	<div class="col-lg-4 col-xs-6">
+			                	<!-- small box -->
+			                	<div class="small-box" id="beneficiary-box">
+			                  		<div class="inner">
+			                    		<h3 class="text-light" v-cloak>Supplier{{"(" + countSupplier() + ")"}}</h3>
+			                    		<p class="text-light">View/Add</p>
+			                  		</div>
+			                  		<div class="icon" style="margin-top:10px">
+			                    		<i class="fas fa-city"></i>
+			                  		</div>
+			                  		<a href="<?php echo url_for('admin/supplier.php')?>" class="small-box-footer">
+			                    		<i class="fas fa-angle-double-right"></i>
+			                  		</a>
+			                	</div>
+			              	</div><!-- ./col -->
+			        	</div>
+			        </div>
+			</div>
+		</div>
+	</section>
+</div>
+<?php include(SHARED_PATH . '/city_hall_footer.php'); ?>
+
